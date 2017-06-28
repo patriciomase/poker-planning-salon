@@ -1,8 +1,38 @@
-.app-container {
-  h1 {
-    color: green;
-  }
-  .big-number {
-    font-size: 72px;
-  }
+body, html {
+  height: 100%;
+  width: 100%;
+} 
+body {
+  background: #151;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  align-items: center;
+  background-color: #222;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+
+.App-header h2 {
+  color: #eee;
+  font-weight: 400;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  display: inline;
+  height: 30px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
