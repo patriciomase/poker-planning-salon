@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DefaultButton from '../components/DefaultButton/DefaultButton';
 
-import { navigateAbout, navigateQuery } from '../actions/index';
+import { navigateTo, navigateQuery } from '../actions/index';
 
 import './home.scss';
 
 class Home extends React.Component {
   
   goToGame() {
-    this.props.navigation.navigateAbout();
+    this.props.navigation.navigateTo('game');
   }
   
   render() {
@@ -30,7 +30,7 @@ class Home extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     navigation: {
-      navigateAbout: () => dispatch(navigateAbout())
+      navigateTo: (path) => dispatch(navigateTo(path))
     }
   }
 }

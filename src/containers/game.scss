@@ -1,0 +1,19 @@
+.game {
+  color: #eee;
+  
+  &-user {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+    
+    img {
+      border-radius: 50%;
+      display: block;
+      margin: auto;
+    }
+  }
+}

@@ -11,7 +11,7 @@ const routes = {
   '/about': {
     title: 'About'
   },
-  '/query': {
+  '/game': {
     title: 'Query'
   }
 };
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default function configureStore(initialState) {
   return createStore(
-    combineReducers({ router: reducer, rootReducer }),
+    combineReducers({ router: reducer, ...rootReducer }),
     initialState,
     compose(enhancer, ...composedMiddleware)
   )

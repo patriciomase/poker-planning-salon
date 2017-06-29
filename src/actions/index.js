@@ -2,9 +2,9 @@ import { push } from 'redux-little-router';
 
 export const STORE_QUERY = 'STORE_QUERY';
 
-export function navigateAbout() {
+export function navigateTo(path) {
   return (dispatch) => {
-    dispatch(push('/about'))
+    dispatch(push(`/${path}`))
   }
 }
 

@@ -1,0 +1,14 @@
+{
+  "name": "planning-poker-salon",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon -L app.js",
+    "debug": "nodemon ./src/app.js"
+  },
+  "dependencies": {
+    "debug": "~2.0.0",
+    "express": "~4.9.0",
+    "node-uuid": "^1.4.7",
+    "socket.io": "^2.0.3"
+  }
+}

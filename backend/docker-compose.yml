@@ -1,0 +1,8 @@
+notification_server:
+  build: .
+  dockerfile: Dockerfile
+  ports:
+    - 30003:30003
+  volumes:
+    - ./application/src:/application/src
+    

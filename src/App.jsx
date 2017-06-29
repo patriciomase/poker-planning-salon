@@ -2,8 +2,9 @@ import React from 'react';
 import { Fragment } from 'redux-little-router';
 
 import About from './containers/about';
-import Query from './containers/query';
+import Game from './containers/Game';
 import Home from './containers/home';
+import SocketManager from './containers/SocketManager';
 
 import logo from './logo.svg';
 
@@ -23,9 +24,10 @@ class App extends React.Component {
           <Fragment forRoute='/about'>
             <About />
           </Fragment>
-          <Fragment forRoute='/query'>
-            <Query />
+          <Fragment forRoute='/game'>
+            <Game />
           </Fragment>
+          <SocketManager />
         </div>
       </Fragment>
     );
