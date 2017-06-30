@@ -11,7 +11,7 @@ const routes = {
   '/about': {
     title: 'About'
   },
-  '/game': {
+  '/game/:id': {
     title: 'Query'
   }
 };

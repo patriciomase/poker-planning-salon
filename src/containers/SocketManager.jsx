@@ -27,7 +27,7 @@ class SocketManager extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     socket: {
-      addUser: (user) => dispatch(addUser(user))
+      refreshUsers: (users) => dispatch(refreshUsers(users))
     }
   }
 }

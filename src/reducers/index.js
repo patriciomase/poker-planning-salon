@@ -6,9 +6,14 @@ import {
   users
 } from './users';
 
+import {
+  userName
+} from './ui';
+
 const rootReducer = {
   queries: queryReducer,
   
+  userName,
   users
 };
 

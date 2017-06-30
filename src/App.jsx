@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Fragment } from 'redux-little-router';
 
 import About from './containers/about';
@@ -16,7 +17,7 @@ class App extends React.Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>Planning Poker Salon</h2>
-            <span>User</span>
+            <span>Hello, {this.props.userName}!</span>
           </div>
           <Fragment forRoute='/'>
             <Home />
@@ -24,7 +25,7 @@ class App extends React.Component {
           <Fragment forRoute='/about'>
             <About />
           </Fragment>
-          <Fragment forRoute='/game'>
+          <Fragment forRoute='/game/:id'>
             <Game />
           </Fragment>
           <SocketManager />
@@ -34,4 +35,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    router: state.router,
+    userName: state.userName
+  }
+}
+
+export default connect(mapStateToProps)(App);

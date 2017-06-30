@@ -1,13 +1,7 @@
 export function users(state = [], action) {
   switch (action.type) {
-    case 'ADD_USER':
-      return [
-        {
-          id: action.id,
-          name: action.name
-        },
-        ...state
-      ];
+    case 'REFRESH_USERS':
+      return action.users;
     default:
       return state;
   }

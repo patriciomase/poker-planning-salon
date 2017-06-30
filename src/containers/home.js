@@ -9,12 +9,16 @@ import './home.scss';
 class Home extends React.Component {
   
   goToGame() {
-    this.props.navigation.navigateTo('game');
+    this.props.navigation.navigateTo(`game/${Date.now()}`);
   }
   
   render() {
     return (
       <div className="home">
+        <div className="home-realName">
+          Probably your actual name is not {this.props.userName},<br />
+          tell us your real name if you want: 
+        </div>
         <DefaultButton onClick={this.goToGame.bind(this)}>
           Create a new game
         </DefaultButton>
@@ -27,6 +31,12 @@ class Home extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    userName: state.userName
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     navigation: {
@@ -35,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
