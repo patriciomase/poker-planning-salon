@@ -4,6 +4,8 @@ import { Link } from 'redux-little-router';
 
 import './game.scss';
 
+import Card from '../components/Card/Card';
+
 // Actions.
 import {
   createRoom
@@ -35,6 +37,11 @@ class Game extends Component {
       <div className="game">
         <TicketName {...this.props.currentTicket} />
         {userList}
+          <Card value={1} clickAction={() => {}} />
+          <Card value={3} clickAction={() => {}} />
+          <Card value={5} clickAction={() => {}} />
+          <Card value={8} clickAction={() => {}} />
+          <Card value={13} clickAction={() => {}} />
       </div>
     )
   }
