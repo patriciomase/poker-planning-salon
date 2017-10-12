@@ -9,6 +9,9 @@ import {
   createRoom
 } from '../actions/socket';
 
+// Components.
+import TicketName from '../components/TicketName/TicketName';
+
 class Game extends Component {
   componentDidMount() {
     this.props.socket.createRoom(
@@ -30,6 +33,7 @@ class Game extends Component {
 
     return (
       <div className="game">
+        <TicketName {...this.props.currentTicket} />
         {userList}
       </div>
     )
@@ -47,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     router: state.router,
+    currentTicketName: state.currentTicket,
     users: state.users,
     userName: state.userName
   }

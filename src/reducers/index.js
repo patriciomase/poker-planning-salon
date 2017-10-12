@@ -7,6 +7,7 @@ import {
 } from './users';
 
 import {
+  currentTicketName,
   userName
 } from './ui';
 
@@ -14,6 +15,8 @@ const rootReducer = {
   queries: queryReducer,
   
   userName,
+  
+  currentTicketName,
   users
 };
 

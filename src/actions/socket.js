@@ -10,7 +10,6 @@ export function refreshUsers(users) {
 
 export function createRoom(room, userName) {
   return (dispatch) => {
-    console.log('connected!', userName);
     dispatch(connectedSuccessfully());
     socket.emit(
       'room',
