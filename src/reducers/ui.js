@@ -10,10 +10,14 @@ export function currentTicketName(state = 'To kill pandas', action) {
   }
 }
 
-export function userName(state = person.name, action) {
+export function defaultUserName(state = person.name, action) {
+  return state;
+}
+
+export function userName(state = null, action) {
   switch (action.type) {
     case 'UPDATE_USER_NAME':
-      return action.name;
+      return action.userName;
     default:
       return state;
   }

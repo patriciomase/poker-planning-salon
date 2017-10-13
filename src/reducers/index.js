@@ -8,12 +8,14 @@ import {
 
 import {
   currentTicketName,
+  defaultUserName,
   userName
 } from './ui';
 
 const rootReducer = {
   queries: queryReducer,
-  
+
+  defaultUserName,
   userName,
   
   currentTicketName,

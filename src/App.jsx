@@ -38,7 +38,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     router: state.router,
-    userName: state.userName
+    userName: state.userName || state.defaultUserName
   }
 }
 

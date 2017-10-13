@@ -28,3 +28,10 @@ export function storeQuery(query) {
     payload: query
   }
 }
+
+export function updateUserName(userName) {
+  return {
+    type: 'UPDATE_USER_NAME',
+    userName: userName
+  }
+}
