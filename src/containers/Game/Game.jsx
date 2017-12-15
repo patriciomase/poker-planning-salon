@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'redux-little-router';
+// import { Link } from 'redux-little-router';
 
 import './game.scss';
 
-import Card from '../components/Card/Card';
+import Card from '../../components/Card/Card';
 
 // Actions.
 import {
   createRoom
-} from '../actions/socket';
+} from '../../actions/socket';
 
 // Components.
-import TicketName from '../components/TicketName/TicketName';
+import TicketName from '../../components/TicketName/TicketName';
 
 class Game extends Component {
   componentDidMount() {
@@ -43,7 +43,7 @@ class Game extends Component {
           <Card value={8} clickAction={() => {}} />
           <Card value={13} clickAction={() => {}} />
       </div>
-    )
+    );
   }
 }
 
@@ -52,8 +52,8 @@ const mapDispatchToProps = (dispatch) => {
     socket: {
       createRoom: (id, userName) => dispatch(createRoom(id, userName))
     }
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -61,7 +61,7 @@ const mapStateToProps = (state) => {
     currentTicketName: state.currentTicket,
     users: state.users,
     userName: state.userName
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

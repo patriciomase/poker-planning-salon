@@ -10,7 +10,7 @@ export function currentTicketName(state = 'To kill pandas', action) {
   }
 }
 
-export function defaultUserName(state = person.name, action) {
+export function defaultUserName(state = person.name) {
   return state;
 }
 

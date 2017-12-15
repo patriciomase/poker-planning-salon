@@ -7,6 +7,6 @@ const TicketName = ({ ticketName }) => {
       {ticketName}
     </div>
   );
-}
+};
 
 export default TicketName;

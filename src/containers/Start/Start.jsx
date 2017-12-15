@@ -1,52 +1,50 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Actions.
+import { navigateTo, updateUserName } from '../../actions/index';
 // Components.
-import DefaultButton from '../components/DefaultButton/DefaultButton';
-import Input from '../components/Input/Input';
-
-import {
-  navigateTo,
-  navigateQuery,
-  updateUserName
-} from '../actions/index';
-
-import './home.scss';
+import Input from '../../components/Input/Input';
+import Button from '../../components/DefaultButton/DefaultButton';
+// Styles.
+import './start.scss';
 
 class Home extends React.Component {
-  
+
   goToGame() {
     this.props.navigation.navigateTo(`game/${Date.now()}`);
   }
-  
+
   render() {
     return (
-      <div className="home">
-        <div className="home-realName">
-          Probably your actual name is not <b>{this.props.userName}</b>,<br />
-          tell us your real name if you want:
+      <div className="container">
+        <header>
+          <img src="../../images/title.png" alt="poker planning" />
+          <div className="subtitle">{'SALOON'}</div>
+        </header>
+        <main>
+          <br /><br />
+          <div>{'First, tell us your name:'}</div>
           <Input
             typeAction={this.props.typing.updateUserName}
             value={this.props.userName}
           />
-        </div>
-        <DefaultButton onClick={this.goToGame.bind(this)}>
-          Create a new game
-        </DefaultButton>
-        or
-        <DefaultButton>
-          Join an existent one
-        </DefaultButton>
+          <br /><br />
+          <Button onClick={this.goToGame.bind(this)}>
+            {'Start'}
+          </Button>
+        </main>
+
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
     userName: (state.userName !== null) ? state.userName : state.defaultUserName
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -56,7 +54,7 @@ const mapDispatchToProps = (dispatch) => {
     typing: {
       updateUserName: (userName) => dispatch(updateUserName(userName))
     }
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
