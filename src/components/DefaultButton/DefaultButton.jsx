@@ -4,8 +4,8 @@ import './defaultButton.scss';
 
 const DefaultButton = ({ children, onClick = () => {} }) => {
   const handleClick = () => {
-    onClick()
-  }
+    onClick();
+  };
   return (
     <button
       className="DefaultButton"
@@ -14,6 +14,6 @@ const DefaultButton = ({ children, onClick = () => {} }) => {
       {children}
     </button>
   );
-}
+};
 
 export default DefaultButton;

@@ -5,7 +5,7 @@ export function refreshUsers(users) {
   return {
     type: 'REFRESH_USERS',
     users: users
-  }
+  };
 }
 
 export function createRoom(room, userName) {
@@ -22,11 +22,11 @@ export function createRoom(room, userName) {
     socket.on('messageRoom', (data) => {
       dispatch(refreshUsers(data));
     });
-  }
+  };
 }
 
-function connectedSuccessfully(status) {
+function connectedSuccessfully() {
   return {
     type: 'CONNECTED_SUCCESSFULLY'
-  }
+  };
 }

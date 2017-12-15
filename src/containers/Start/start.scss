@@ -1,0 +1,22 @@
+// @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+$font-regular: 16px;
+$font-medium: 28px;
+$font-big: 50px;
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+img{
+    max-width: 400px;
+}
+main{
+    font-size: $font-regular;
+    color:black;
+}
+.subtitle{
+    // font-family: 'Merriweather Sans', sans-serif;
+    color:black;
+    font-weight: bold;
+    font-size: $font-medium;
+}
