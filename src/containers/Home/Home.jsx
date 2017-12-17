@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Components.
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
-import Input from '../../components/Input/Input';
-
+import Card from '../../components/Card/Card';
 import {
   navigateTo,
   updateUserName
@@ -13,29 +11,18 @@ import {
 import './home.scss';
 
 class Home extends React.Component {
-  
-  goToGame() {
-    this.props.navigation.navigateTo(`game/${Date.now()}`);
-  }
-  
+
   render() {
+  
+    const goToGame = () => {
+      this.props.navigation.navigateTo(`game/${Date.now()}`);
+    };
+  
     return (
       <div className="home">
-        <div className="home-realName">
-          {'Probably your actual name is not'} <b>{this.props.userName}</b>{','}<br/>
-          {' tell us your real name if you want:'}
-          <Input
-            typeAction={this.props.typing.updateUserName}
-            value={this.props.userName}
-          />
-        </div>
-        <DefaultButton onClick={this.goToGame.bind(this)}>
-          {'Create a new game'}
-        </DefaultButton>
-        {'or'}
-        <DefaultButton>
-          {'Join an existent one'}
-        </DefaultButton>
+        <Card className="card" text="New Room" value={1} clickAction={goToGame} />
+        <span className="card-separator">{'or'}</span>
+        <Card className="card" value={2} text="Join Room" clickAction={() => { }} />
       </div>
     );
   }

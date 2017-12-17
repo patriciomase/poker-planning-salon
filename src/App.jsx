@@ -19,13 +19,15 @@ class App extends React.Component {
             <Start />
           </Fragment>
           <Fragment forRoute="/home">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>{'Planning Poker Salon'}</h2>
-            <span>{'Hello, ' + this.props.userName}</span>
-          </div>  
-          <Home />
-        </Fragment>
+            <div>
+              <div className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h2>{'Planning Poker Salon'}</h2>
+                <span>{'Hello, ' + this.props.userName}</span>
+              </div>
+              <Home />
+            </div>
+          </Fragment>
           <Fragment forRoute="/about">
             <About />
           </Fragment>
