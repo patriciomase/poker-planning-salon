@@ -8,7 +8,7 @@ import Home from './containers/Home/Home';
 import Start from './containers/Start/Start';
 
 import SocketManager from './containers/SocketManager';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 
 class App extends React.Component {
   render() {
