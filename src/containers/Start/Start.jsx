@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 // Actions.
 import { navigateTo, updateUserName } from '../../actions/index';
@@ -9,10 +10,10 @@ import Button from '../../components/DefaultButton/DefaultButton';
 // Styles.
 import './start.scss';
 
-class Home extends React.Component {
+class Start extends React.Component {
 
   goToGame() {
-    this.props.navigation.navigateTo(`game/${Date.now()}`);
+    this.props.navigation.navigateTo('home');
   }
 
   render() {
@@ -34,7 +35,6 @@ class Home extends React.Component {
             {'Start'}
           </Button>
         </main>
-
       </div>
     );
   }
@@ -57,4 +57,14 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+Start.propTypes = {
+  navigation: PropTypes.shape({
+    navigateTo: PropTypes.func
+  }),
+  typing: PropTypes.shape({
+    updateUserName: PropTypes.func
+  }),
+  userName: PropTypes.string
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Start);
