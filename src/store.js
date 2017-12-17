@@ -8,6 +8,9 @@ import rootReducer from './reducers';
 
 const routes = {
   '/': {
+    title: 'Start'
+  },
+  '/home': {
     title: 'Home'
   },
   '/about': {

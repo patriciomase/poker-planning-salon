@@ -44,7 +44,7 @@ class Game extends Component {
           <Card value={13} clickAction={() => {}} />
       </div>
     );
-  }
+  } 
 }
 
 const mapDispatchToProps = (dispatch) => {
