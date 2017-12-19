@@ -1,14 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Fragment } from 'redux-little-router';
 
-import About from './containers/about';
-import Game from './containers/Game/Game';
-import Home from './containers/Home/Home';
+import Header from './components/Header/Header';
 import Start from './containers/Start/Start';
+import Home from './containers/Home/Home';
+import Game from './containers/Game/Game';
+import About from './containers/about';
 
-import SocketManager from './containers/SocketManager';
-import logo from './images/logo.svg';
 
 class App extends React.Component {
   render() {
@@ -20,11 +20,7 @@ class App extends React.Component {
           </Fragment>
           <Fragment forRoute="/home">
             <div>
-              <div className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h2>{'Planning Poker Salon'}</h2>
-                <span>{'Hello, ' + this.props.userName}</span>
-              </div>
+              <Header />
               <Home />
             </div>
           </Fragment>
@@ -34,7 +30,6 @@ class App extends React.Component {
           <Fragment forRoute="/game/:id">
             <Game />
           </Fragment>
-          <SocketManager />
         </div>
       </Fragment>
     );
@@ -46,6 +41,10 @@ const mapStateToProps = (state) => {
     router: state.router,
     userName: state.userName || state.defaultUserName
   };
+};
+
+App.propTypes = {
+  userName: PropTypes.string
 };
 
 export default connect(mapStateToProps)(App);
