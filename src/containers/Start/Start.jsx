@@ -18,7 +18,7 @@ class Start extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-start">
         <header>
           <img src="../../images/title.png" alt="poker planning" />
           <div className="subtitle">{'SALOON'}</div>
