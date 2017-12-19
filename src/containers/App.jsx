@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Fragment } from 'redux-little-router';
 
-import Header from './components/Header/Header';
-import Start from './containers/Start/Start';
-import Home from './containers/Home/Home';
-import Game from './containers/Game/Game';
-import About from './containers/about';
+import Header from '../components/Header/Header';
+import Start from './Start/Start';
+import Home from './Home/Home';
+import Game from './Game/Game';
+import About from './About/about';
 
+import './app.scss';
 
 class App extends React.Component {
   render() {
