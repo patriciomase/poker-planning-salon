@@ -1,36 +1,52 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import './header.scss';
+// Actions.
+import { navigateTo, updateUserName } from '../../actions/index';
 
-import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
-import logo from '../../images/title.png';
+import logo from '../../images/title.png';  
 
 class Header extends React.Component {
   render() {
+    const goHome = () => {
+      this.props.navigation.navigateTo('');
+    };
+
     return (
-        <Navbar default collapseOnSelect fluid>
-            <Navbar.Header>
-                <Navbar.Brand>
-                    <img src={logo} />
-                </Navbar.Brand>
-                <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-                <Nav pullRight>
-                    <NavDropdown eventKey={3} title={this.props.userName} id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1}>{'Log Out'}</MenuItem>
-                    </NavDropdown>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+        <div className="navbar">
+        <img src={logo} />
+        <div className="dropdown">
+          <button className="dropbtn">{ this.props.userName }</button>
+          <div className="dropdown-content">
+            <a onClick={ goHome }>{'Log out'}</a>
+          </div>
+        </div> 
+      </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    router: state.router,
-    userName: state.userName || state.defaultUserName
-  };
+const mapDispatchToProps = dispatch => ({
+  navigation: {
+    navigateTo: path => dispatch(navigateTo(path)),
+  },
+  typing: {
+    updateUserName: userName => dispatch(updateUserName(userName)),
+  },
+});
+
+
+const mapStateToProps = state => ({
+  router: state.router,
+  userName: state.userName || state.defaultUserName,
+});
+
+Header.propTypes = {
+  userName: PropTypes.string,
+  navigation: PropTypes.shape({
+    navigateTo: PropTypes.func,
+  }),
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

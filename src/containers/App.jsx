@@ -29,7 +29,10 @@ class App extends React.Component {
             <About />
           </Fragment>
           <Fragment forRoute="/game/:id">
-            <Game />
+            <div>
+              <Header />
+              <Game />
+            </div>
           </Fragment>
         </div>
       </Fragment>
