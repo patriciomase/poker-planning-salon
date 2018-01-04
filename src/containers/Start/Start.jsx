@@ -5,37 +5,37 @@ import PropTypes from 'prop-types';
 // Actions.
 import { navigateTo, updateUserName } from '../../actions/index';
 // Components.
-import Input from '../../components/Input/Input';
-import Button from '../../components/DefaultButton/DefaultButton';
+// import Input from '../../components/Input/Input';
+// import Button from '../../components/DefaultButton/DefaultButton';
 // Styles.
 import './start.scss';
 
 class Start extends React.Component {
-
-  goToGame() {
-    this.props.navigation.navigateTo('home');
-  }
-
   render() {
+
+    const goToGame = () => {
+      this.props.navigation.navigateTo('home');
+    };
+
     return (
-      <div className="container-start">
-        <header>
-          <img src="../../images/title.png" alt="poker planning" />
-          <div className="subtitle">{'SALOON'}</div>
-        </header>
-        <main>
-          <br /><br />
-          <div>{'First, tell us your name:'}</div>
-          <Input
-            typeAction={this.props.typing.updateUserName}
-            value={this.props.userName}
-          />
-          <br /><br />
-          <Button onClick={this.goToGame.bind(this)}>
-            {'Start'}
-          </Button>
-        </main>
+      <div className="bgimg w3-green w3-display-container w3-animate-opacity w3-text-white">
+        <div className="w3-display-topleft w3-padding-large w3-xlarge">
+          Logo
+        </div>
+        <div className="w3-display-middle">
+          <h1 className="w3-jumbo w3-animate-top">{'Poker Planning'}</h1>
+          <hr className="w3-border-grey hr-large" />
+          <form className="w3-container w3-center" onSubmit={goToGame}>
+            <p>
+              <label className="w3-large">{'First, Enter you name:'}</label>
+              <br />
+              <input className="w3-input" type="text" defaultValue={this.props.userName} />
+            </p>
+            <button type="submit" className="w3-btn w3-white w3-border w3-text-black w3-round-xlarge">{' Start to play '}</button>
+          </form>
+        </div>
       </div>
+
     );
   }
 }

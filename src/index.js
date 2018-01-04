@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store.js';
 import { initializeCurrentLocation, RouterProvider } from 'redux-little-router';
 
-import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+// import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 const store = configureStore();
 const initialLocation = store.getState().router;

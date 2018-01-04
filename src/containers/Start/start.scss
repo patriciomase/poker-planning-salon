@@ -1,21 +1,10 @@
-$font-regular: 16px;
-$font-medium: 28px;
-$font-big: 50px;
+.bgimg {
+    background: url("https://www.walldevil.com/wallpapers/a52/wallpaper-textur-background-patterns-backgrounds-wallpapers.jpg");
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
 
-.container-start {
-    text-align: center;
-    margin-top: 100px;
-}
-img{
-    max-width: 400px;
-}
-main{
-    font-size: $font-regular;
-    color:black;
-}
-.subtitle{
-    // font-family: 'Merriweather Sans', sans-serif;
-    color:black;
-    font-weight: bold;
-    font-size: $font-medium;
+body, html {
+    height: 100%;
 }

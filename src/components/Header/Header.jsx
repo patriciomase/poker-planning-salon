@@ -5,23 +5,24 @@ import './header.scss';
 // Actions.
 import { navigateTo, updateUserName } from '../../actions/index';
 
-import logo from '../../images/title.png';  
 
 class Header extends React.Component {
   render() {
-    const goHome = () => {
+    const logOut = () => {
       this.props.navigation.navigateTo('');
     };
 
     return (
-        <div className="navbar">
-        <img src={logo} />
-        <div className="dropdown">
-          <button className="dropbtn">{ this.props.userName }</button>
-          <div className="dropdown-content">
-            <a onClick={ goHome }>{'Log out'}</a>
+      <div className="w3-bar w3-border w3-green">
+        <a href="#" className="w3-bar-item w3-button w3-hover-none w3-padding-16">LOGO</a>
+        <a href="#" className="w3-bar-item w3-button w3-padding-16">Home</a>
+        <a href="#" className="w3-bar-item w3-button w3-padding-16">About</a>
+        <div className="w3-dropdown-hover w3-right">
+          <button className="w3-button w3-padding-16">{this.props.userName}</button>
+          <div className="w3-dropdown-content w3-bar-block w3-card-4">
+            <a onClick={logOut} className="w3-bar-item w3-button">Logout</a>
           </div>
-        </div> 
+        </div>
       </div>
     );
   }

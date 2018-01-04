@@ -4,6 +4,7 @@
   background-color: rgba(40, 40, 40, 0.7);
   border: solid black 1px;
   font-family: Arial;
+  margin-bottom: 0 !important; //Bootstrap override
 }
 
 /* Links inside the navbar */
@@ -39,7 +40,7 @@
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: rgba(8, 8, 8, 0.856);
+  background-color: rgba(8, 8, 8, 0.856);
 }
 
 /* Dropdown content (hidden by default) */
@@ -66,8 +67,8 @@
 }
 
 .dropdown-content a:hover{
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 /* Add a grey background color to dropdown links on hover */

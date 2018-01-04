@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Fragment } from 'redux-little-router';
+import 'w3-css/w3.css';
 
 import Header from '../components/Header/Header';
 import Start from './Start/Start';
