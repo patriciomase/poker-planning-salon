@@ -24,52 +24,34 @@ class Game extends Component {
   render() {
     // const { users } = this.props;
 
-    const openCity = (evt, cityName) => {
-      // Declare all variables
-      var i, tabcontent, tablinks;
+    const sidebarOpen = () => {
+      document.getElementById('main').style.marginLeft = '200px';
+      document.getElementById('mySidebar').style.width = '200px';
+      document.getElementById('mySidebar').style.display = 'block';
+    };
 
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName('tabcontent');
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = 'none';
-      }
-
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName('tablinks');
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(' active', '');
-      }
-
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = 'block';
-      evt.currentTarget.className += ' active';
+    const sidebarClose = () => {
+      document.getElementById('mySidebar').style.display = 'none';
     };
 
     return (
       <div>
-        <side className="content">
-          <div className="averageDisplay" />
-          <div className="tab">
-            <button className="tablinks">London</button>
-            <button className="tablinks">Paris</button>
-            <button className="tablinks" onClick={openCity(event, 'Tokyo')}>Tokyo</button>
-            <div id="London" className="tabcontent">
-              <h3>London</h3>
-              <p>London is the capital city of England.</p>
-            </div>
+        <div className="w3-sidebar w3-bar-block w3-collapse w3-card sidebar" id="mySidebar">
+          <button className="w3-bar-item w3-button w3-hide-large" onClick={sidebarClose}>
+            Close &times;
+          </button>
+          <a href="#" className="w3-bar-item w3-button">Link 1</a>
+          <a href="#" className="w3-bar-item w3-button">Link 2</a>
+          <a href="#" className="w3-bar-item w3-button">Link 3</a>
+        </div>
 
-            <div id="Paris" className="tabcontent">
-              <h3>Paris</h3>
-              <p>Paris is the capital of France.</p>
-            </div>
+        <div className="w3-main content" id="main">
 
-            <div id="Tokyo" className="tabcontent">
-              <h3>Tokyo</h3>
-              <p>Tokyo is the capital of Japan.</p>
-            </div>
+          <div className="w3-teal">
+            <button className="w3-button w3-teal w3-xlarge w3-right" onClick={sidebarOpen}>&#9776;</button>
+            <h1>My Page</h1>
           </div>
-        </side>
-        <article className="sidebar" />
+        </div>
       </div>
     );
   }
