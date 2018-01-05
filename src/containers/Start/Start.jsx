@@ -1,20 +1,28 @@
+/* eslint-disable no-console */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Actions.
 import { navigateTo, updateUserName } from '../../actions/index';
-// Components.
-// import Input from '../../components/Input/Input';
-// import Button from '../../components/DefaultButton/DefaultButton';
 // Styles.
 import './start.scss';
 
 class Start extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
 
     const goToGame = () => {
       this.props.navigation.navigateTo('home');
+    };
+
+    const onNameChange = (value) => {
+      this.props.typing.updateUserName(value.target.value);      
     };
 
     return (
@@ -29,7 +37,7 @@ class Start extends React.Component {
             <p>
               <label className="w3-large">{'First, Enter you name:'}</label>
               <br />
-              <input className="w3-input" type="text" defaultValue={this.props.userName} />
+              <input className="w3-input" type="text" onChange={ onNameChange } defaultValue={this.props.userName} />
             </p>
             <button type="submit" className="w3-btn w3-border w3-text-white ">{' Press to begin! '}</button>
           </form>
