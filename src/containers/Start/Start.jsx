@@ -31,7 +31,7 @@ class Start extends React.Component {
               <br />
               <input className="w3-input" type="text" defaultValue={this.props.userName} />
             </p>
-            <button type="submit" className="w3-btn w3-white w3-border w3-text-black w3-round-xlarge">{' Start to play '}</button>
+            <button type="submit" className="w3-btn w3-border w3-text-white ">{' Press to begin! '}</button>
           </form>
         </div>
       </div>
