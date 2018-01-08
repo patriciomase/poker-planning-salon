@@ -14,19 +14,45 @@ class Header extends React.Component {
     const goHome = () => {
       this.props.navigation.navigateTo('home');
     };
+    const toggleFunction = () => {
+      var x = document.getElementById('navDemo');
+      if (x.className.indexOf('w3-show') == -1) {
+        x.className += ' w3-show';
+      } else {
+        x.className = x.className.replace(' w3-show', '');
+      }
+    };
 
     return (
-      <div className="w3-bar w3-border w3-green">
-        <a href="#" className="w3-bar-item w3-button w3-hover-none w3-padding-16">LOGO</a>
-        <a href="#" className="w3-bar-item w3-button w3-padding-16" onClick={goHome}>Home</a>
-        <a href="#" className="w3-bar-item w3-button w3-padding-16">About</a>
-        <div className="w3-dropdown-hover w3-right">
-          <button className="w3-button w3-padding-16">{this.props.userName}</button>
-          <div className="w3-dropdown-content w3-bar-block w3-card-4">
-            <a onClick={logOut} className="w3-bar-item w3-button w3-topmost">Logout</a>
+      <div>
+        <div className="w3-bar w3-green" id="myNavbar">
+          <a className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onClick={toggleFunction} title="Toggle Navigation Menu">
+            <span className="menu-icon">{'☰'}</span>
+          </a>
+          <a href="#" className="w3-bar-item w3-button w3-hover-none">LOGO</a>
+          <a href="#" className="w3-bar-item w3-button w3-hide-small" onClick={goHome}>Home</a>
+          <a href="#" className="w3-bar-item w3-button w3-hide-small">About</a>
+          <div className="w3-dropdown-hover w3-right w3-hide-small">
+            <button className="w3-button">{this.props.userName}</button>
+            <div className="w3-dropdown-content w3-bar-block w3-card-4 ">
+              <a onClick={logOut} className="w3-bar-item w3-button w3-topmost">Logout</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+
+          <a href="#" className="w3-bar-item w3-button" onClick={goHome}>Home</a>
+          <a href="#" className="w3-bar-item w3-button">About</a>
+          <div className="w3-dropdown-hover">
+            <button className="w3-button">{this.props.userName}</button>
+            <div className="w3-dropdown-content w3-bar-block w3-card-4">
+              <a onClick={logOut} className="w3-bar-item w3-button w3-topmost">Logout</a>
+            </div>
           </div>
         </div>
       </div>
+
     );
   }
 }
