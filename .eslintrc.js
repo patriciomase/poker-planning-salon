@@ -38,7 +38,7 @@ module.exports = {
     "browser": true,
     "mocha": true,
   },
-  "extends": "eslint:recommended",
+  // "extends": "eslint:recommended",
   "ecmaFeatures": {
     "jsx": true,
     "experimentalObjectRestSpread": true
