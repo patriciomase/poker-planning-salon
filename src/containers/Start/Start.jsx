@@ -26,7 +26,7 @@ class Start extends React.Component {
     };
 
     return (
-      <div className="bgimg w3-green w3-display-container w3-animate-opacity w3-text-white">
+      <div className="bgimg w3-green w3-display-container w3-text-white">
         <div className="w3-display-topleft w3-padding-large w3-xlarge">
           Logo
         </div>
