@@ -34,17 +34,45 @@ class Game extends Component {
           <button className="w3-bar-item w3-button w3-hide-large" onClick={this.switchSidebar}>
             Close &times;
           </button>
-          <a href="#" className="w3-bar-item w3-button">Story 1</a>
-          <a href="#" className="w3-bar-item w3-button">Story 2</a>
-          <a href="#" className="w3-bar-item w3-button">Story 3</a>
+          <div className="w3-container w3-blue">
+            <h5>Stories</h5>
+          </div>
+          <table className="w3-table-all">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Story</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="w3-hover-opacity w3-hover-blue" style={{ cursor: 'pointer' }}>
+                <td className="w3-center">1</td>
+                <td>Some really long ass description of the story</td>
+                <td className="w3-center">-</td>
+              </tr>
+              <tr className="w3-hover-opacity w3-hover-blue" style={{ cursor: 'pointer' }}>
+                <td className="w3-center">2</td>
+                <td>A short description</td>
+                <td className="w3-center">-</td>
+              </tr>
+              <tr className="w3-hover-opacity w3-hover-blue" style={{ cursor: 'pointer' }}>
+                <td className="w3-center">2</td>
+                <td>Another short description</td>
+                <td className="w3-center">15</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div className="w3-main" style={{ marginRight: '300px' }} >
-       
-          <Board switchSidebar={ this.switchSidebar  }/>
+
+          <Board switchSidebar={this.switchSidebar} />
         </div>
-        <div className="w3-container w3-blue" style={{height: '300px'}}>
-          Users 
+        <div className="w3-container">
+          <h4>Participants</h4>
+        </div>
+        <div className="w3-container w3-border" style={{ height: '200px' }}>
         </div>
       </div>
     );
