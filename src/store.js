@@ -1,3 +1,5 @@
+/*global process:true*/
+
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { routerForBrowser } from 'redux-little-router';
@@ -6,6 +8,9 @@ import rootReducer from './reducers';
 
 const routes = {
   '/': {
+    title: 'Start'
+  },
+  '/home': {
     title: 'Home'
   },
   '/about': {
@@ -32,5 +37,5 @@ export default function configureStore(initialState) {
     combineReducers({ router: reducer, ...rootReducer }),
     initialState,
     compose(enhancer, ...composedMiddleware)
-  )
+  );
 }

@@ -102,5 +102,5 @@ const names = [
 ];
 
 export default function giveMeName() {
-  return names[Date.now() % 100]
+  return names[Date.now() % 100];
 }

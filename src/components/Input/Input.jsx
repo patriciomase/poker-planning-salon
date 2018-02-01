@@ -5,7 +5,7 @@ import './input.scss';
 const Input = ({ typeAction, value }) => {
   const handleChange = (event) => {
     typeAction(event.target.value);
-  }
+  };
 
   return (
     <input
@@ -15,6 +15,6 @@ const Input = ({ typeAction, value }) => {
       value={value}
     />
   );
-}
+};
 
 export default Input;

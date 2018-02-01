@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  background-color:#E8E8E8;
+}
+
+/*Overrides*/
+.w3-sidebar{
+  z-index: 0;
+}
+.w3-dim-gray{
+  background-color: #E8E8E8;
+}
