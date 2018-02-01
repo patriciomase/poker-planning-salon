@@ -29,7 +29,13 @@ export function storeQuery(query) {
   };
 }
 
+function setCookie(key, val) {
+  document.cookie = `${key}=${val};
+      expires=Fri, 31 Dec 2024 23:59:59 GMT`;
+}
+
 export function updateUserName(userName) {
+  setCookie('userName', userName);
   return {
     type: 'UPDATE_USER_NAME',
     userName: userName

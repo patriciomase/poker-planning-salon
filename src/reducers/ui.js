@@ -1,6 +1,3 @@
-import giveMeName from '../libraries/names.js';
-const person = giveMeName();
-
 export function currentTicketName(state = 'To kill pandas', action) {
   switch (action.type) {
     case 'UPDATE_TICKET_NAME':
@@ -8,10 +5,6 @@ export function currentTicketName(state = 'To kill pandas', action) {
     default:
       return state;
   }
-}
-
-export function defaultUserName(state = person.name) {
-  return state;
 }
 
 export function userName(state = null, action) {
