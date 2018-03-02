@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './header.scss';
+
 // Actions.
 import { navigateTo, updateUserName } from '../../actions/index';
 
+// Components.
+import HeaderButton from '../HeaderButton/HeaderButton';
 
 class Header extends React.Component {
   render() {
-    const logOut = () => {
-      this.props.navigation.navigateTo('');
-    };
     const goHome = () => {
       this.props.navigation.navigateTo('home');
     };
@@ -34,8 +34,8 @@ class Header extends React.Component {
           <a href="#" className="w3-bar-item w3-button w3-hide-small">About</a>
           <div className="w3-dropdown-hover w3-right w3-hide-small">
             <button className="w3-button">{this.props.userName}</button>
-            <div className="w3-dropdown-content w3-bar-block w3-card-4 ">
-              <a onClick={logOut} className="w3-bar-item w3-button w3-topmost">Logout</a>
+            <div className="w3-dropdown-content w3-bar-block w3-card-4">
+              <HeaderButton clickAction={this.props.navigation.navigateTo}/>
             </div>
           </div>
         </div>
@@ -47,12 +47,11 @@ class Header extends React.Component {
           <div className="w3-dropdown-hover">
             <button className="w3-button">{this.props.userName}</button>
             <div className="w3-dropdown-content w3-bar-block w3-card-4">
-              <a onClick={logOut} className="w3-bar-item w3-button w3-topmost">Logout</a>
+              <HeaderButton clickAction={this.props.navigation.navigateTo} />
             </div>
           </div>
         </div>
       </div>
-
     );
   }
 }
